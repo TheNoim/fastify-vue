@@ -1,4 +1,4 @@
-# fastify-vue
+# fastify-vue-plugin
 
 _A [nuxt.js](https://nuxtjs.org) [fastify](https://fastify.io) plugin_
 
@@ -20,7 +20,7 @@ npm i fastify-vue-plugin --save
 ```javascript
 const fastify = require('fastify')();
 
-fastify.register(require('fastify-vue'), {
+fastify.register(require('fastify-vue-plugin'), {
     config: require("./nuxt.config.js")
 }).after(e => {
     if (e) console.trace(e);
