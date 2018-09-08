@@ -1,0 +1,9 @@
+node_modules/
+test.js
+.gitignore
+pages/
+.eslintrc.js
+ex.js
+test.js
+.nuxt/
+.idea/
