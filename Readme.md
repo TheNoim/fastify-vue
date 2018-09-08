@@ -2,6 +2,11 @@
 
 _A [nuxt.js](https://nuxtjs.org) [fastify](https://fastify.io) plugin_
 
+[![NpmLicense](https://img.shields.io/npm/l/fastify-vue-plugin.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-vue-plugin)
+[![David](https://img.shields.io/david/TheNoim/fastify-vue.svg?style=for-the-badge)](https://github.com/TheNoim/fastify-vue)
+[![GitHub package version](https://img.shields.io/github/package-json/v/TheNoim/fastify-vue.svg?style=for-the-badge)](https://github.com/TheNoim/fastify-vue)
+[![NPM Link](https://img.shields.io/badge/npm-fastify--vue--plugin-red.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-vue-plugin)
+
 ### Installation
 
 ```bash
