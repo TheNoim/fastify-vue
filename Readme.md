@@ -2,6 +2,14 @@
 
 _A [nuxt.js](https://nuxtjs.org) [fastify](https://fastify.io) plugin_
 
+### Installation
+
+```bash
+yarn add fastify-vue-plugin
+# or if you use npm
+npm i fastify-vue-plugin --save
+```
+
 ### Usage
 
 ```javascript

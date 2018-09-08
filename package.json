@@ -1,5 +1,5 @@
 {
-  "name": "fastify-vue",
+  "name": "fastify-vue-plugin",
   "version": "1.0.0",
   "description": "Nuxt.JS for fastify",
   "main": "index.js",
