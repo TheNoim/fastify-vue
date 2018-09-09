@@ -7,6 +7,7 @@ fastify.register(require('./index'), {
 }).after(e => {
     if (e) console.trace(e);
     fastify.nuxt('/');
+    fastify.nuxt('/test/:id');
 });
 
 fastify.listen(1337, '0.0.0.0' , (e) => {

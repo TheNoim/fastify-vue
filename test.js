@@ -1,10 +1,11 @@
 const Fastify = require('fastify');
 const fetch = require('node-fetch');
+const nanoid = require('nanoid');
 
-test("fastify should have decorator nuxt", done => {
+test('fastify should have decorator nuxt', done => {
     const fastify = Fastify();
 
-    const pl = require("./index");
+    const pl = require('./index');
 
     fastify.register(pl, {config: { dev: false }}).after(err => {
         expect(err).toBeFalsy();
@@ -15,36 +16,59 @@ test("fastify should have decorator nuxt", done => {
     fastify.close();
 });
 
-test("should throw if no config is provided", done => {
+test('should throw if no config is provided', done => {
     const fastify = Fastify();
 
-    const pl = require("./index");
+    const pl = require('./index');
 
     fastify.register(pl).after(err => {
         expect(err).toBeDefined();
         expect(err.message).toBeDefined();
-        expect(err.message).toEqual("You need to provide a nuxt config.");
+        expect(err.message).toEqual('You need to provide a nuxt config.');
         done();
     });
 
     fastify.close();
 });
 
-test("page should be reach able", done => {
+test('page should be reach able', done => {
     const fastify = Fastify();
 
-    const pl = require("./index");
+    const pl = require('./index');
 
     fastify.register(pl, {config: { dev: false }}).after(err => {
         expect(err).toBeFalsy();
-        fastify.nuxt("/");
+        fastify.nuxt('/');
     });
 
     fastify.listen(1337, async err => {
         expect(err).toBeFalsy();
         const r = await fetch('http://127.0.0.1:1337/');
         const data = await r.text();
-        expect(data).toContain("Nice to meet you");
+        expect(data).toContain('Nice to meet you');
+        fastify.close(() => {
+            done();
+        });
+    });
+}, 15000);
+
+test('params should work', done => {
+    const fastify = Fastify();
+
+    const pl = require('./index');
+
+    const id = nanoid();
+
+    fastify.register(pl, {config: { dev: false }}).after(err => {
+        expect(err).toBeFalsy();
+        fastify.nuxt('/test/:id');
+    });
+
+    fastify.listen(1337, async err => {
+        expect(err).toBeFalsy();
+        const r = await fetch('http://127.0.0.1:1337/test/' + id);
+        const data = await r.text();
+        expect(data).toContain(id);
         fastify.close(() => {
             done();
         });

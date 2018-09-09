@@ -21,13 +21,16 @@ npm i fastify-vue-plugin --save
 const fastify = require('fastify')();
 
 fastify.register(require('fastify-vue-plugin'), {
-    config: require("./nuxt.config.js")
+    config: require('./nuxt.config.js')
 }).after(e => {
     if (e) console.trace(e);
     fastify.nuxt('/'); // is equals: index.vue
-    fastify.nuxt("/dashboard")
+    fastify.nuxt('/dashboard');
     // add all your nuxtjs routes
     // make sure there are added in the after function
+    
+    // use params
+    fastify.nuxt('/product/:id');
 });
 
 // other stuff/routes
