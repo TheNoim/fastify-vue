@@ -1,4 +1,4 @@
-/// <reference path="node_modules/fastify/fastify.d.ts" />
+/// <reference types="fastify" />
 
 import * as fastify from 'fastify';
 import * as http from "http";
