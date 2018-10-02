@@ -18,7 +18,7 @@ declare let fastifyVue: fastify.Plugin<HttpServer, HttpRequest, HttpResponse, Fa
 
 declare module 'fastify' {
 
-    export interface FastifyInstance extends FastifyInstance {
+    export interface FastifyInstance {
         register<T extends RegisterOptions<HttpServer, HttpRequest, HttpResponse>>(plugin: Plugin<HttpServer, HttpRequest, HttpResponse, T>, opts?: FastifyVueOptions | T): FastifyInstance<HttpServer, HttpRequest, HttpResponse>
 
         // noinspection SpellCheckingInspection
