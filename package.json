@@ -10,7 +10,7 @@
   "dependencies": {
     "fastify-plugin": "^1.2.0",
     "lodash.defaults": "^4.2.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
