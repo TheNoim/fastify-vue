@@ -21,7 +21,8 @@ npm i fastify-vue-plugin --save
 const fastify = require('fastify')();
 
 fastify.register(require('fastify-vue-plugin'), {
-    config: require('./nuxt.config.js')
+    config: require('./nuxt.config.js'),
+    attachProperties: ['session'] // Attach properties from the fastify request object to the nuxt request object. Example use case: Attach session store to nuxt context.
 }).after(e => {
     if (e) console.trace(e);
     fastify.nuxt('/'); // is equals: index.vue

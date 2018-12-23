@@ -16,6 +16,10 @@ module.exports = fp(/**
             config.dev = process.env.NODE_ENV !== 'production';
         }
         const nuxt = new Nuxt(config);
+        let attachProperties = [];
+        if (opts.attachProperties && Array.isArray(opts.attachProperties)) {
+            attachProperties = opts.attachProperties;
+        }
 
         let build = true;
         let buildPromise = Promise.resolve();
@@ -44,7 +48,11 @@ module.exports = fp(/**
                         await buildPromise;
                     }
                     reply.sent = true;
-                    return nuxt.render(request.raw, reply.res);
+                    let rq = request.raw;
+                    for (const key of attachProperties) {
+                        if (request[key]) rq[key] = request[key];
+                    }
+                    return nuxt.render(rq, reply.res);
                 }
             }, options);
             fastify.route(opt);
