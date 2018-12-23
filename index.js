@@ -43,13 +43,14 @@ module.exports = fp(/**
                     if (!build) {
                         await buildPromise;
                     }
-                    return nuxt.render({...request.raw, ...request}, reply.res);
+                    reply.sent = true;
+                    return nuxt.render(request.raw, reply.res);
                 }
             }, options);
             fastify.route(opt);
         }).after(() => {
             fastify.nuxt('/_nuxt/*');
-            fastify.nuxt('/__webpack_hmr', {
+            fastify.nuxt('/__webpack_hmr/*', {
                 method: ['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT', 'OPTIONS']
             });
         });
