@@ -3735,10 +3735,10 @@ fast-safe-stringify@^1.0.8, fast-safe-stringify@^1.2.3:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-1.2.3.tgz#9fe22c37fb2f7f86f06b8f004377dbf8f1ee7bc1"
   integrity sha512-QJYT/i0QYoiZBQ71ivxdyTqkwKkQ0oxACXHYxH2zYHJEgzi2LsbjgvtzTbLi1SZcF190Db2YP7I7eTsU2egOlw==
 
-fastify-plugin@^1.2.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-1.4.0.tgz#9f63ffc304a2f34e890773e78d2ba6908536e5b2"
-  integrity sha512-l6uqDyBp3gBjLQRAi3j2NwSvlbe9LuqULZugnO9iRFfYHWd2SpsZBLI1l4Jakk0VMGfYlB322JPIPYh/2qSHig==
+fastify-plugin@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-1.5.0.tgz#4bea12c54112f4749c17f3a1f17356cbdfa661af"
+  integrity sha512-bXKSTR4Q1lxERf1p/10Aakga570XtcxCCvPR1gby5js1XOtg7E8UV+aHHEPbGowQGV/KVb7ARBROhPk2I4DfBw==
   dependencies:
     semver "^5.5.0"
 
