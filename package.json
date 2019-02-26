@@ -1,6 +1,6 @@
 {
   "name": "fastify-vue-plugin",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Nuxt.JS for fastify",
   "main": "index.js",
   "repository": "https://github.com/TheNoim/fastify-vue.git",
